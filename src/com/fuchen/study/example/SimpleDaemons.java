@@ -14,7 +14,7 @@ public class SimpleDaemons implements Runnable {
     public void run() {
         try {
             while (true) {
-                TimeUnit.MICROSECONDS.sleep(100);
+                TimeUnit.MICROSECONDS.sleep(200);
                 System.out.println(Thread.currentThread() + " " + this);
             }
         } catch (InterruptedException e) {
@@ -25,7 +25,7 @@ public class SimpleDaemons implements Runnable {
     public static void main(String[] args) throws Exception {
         for (int i = 0; i < 10; i++) {
             Thread deamon = new Thread(new SimpleDaemons());
-            // 必须在 start() 方法之前调用setDaemon
+            // 必须在 start() 方法之前调用setDaemon，才能把它设置为后台线程
             deamon.setDaemon(true);
             deamon.start();
         }
