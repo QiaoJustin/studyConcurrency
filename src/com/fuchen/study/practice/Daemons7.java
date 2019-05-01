@@ -1,5 +1,7 @@
 package com.fuchen.study.practice;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * @Description 使用不同的休眠时间
  * @Author fuchen
@@ -7,13 +9,13 @@ package com.fuchen.study.practice;
  * Version 1.0
  */
 public class Daemons7 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Thread t = new Thread(new Daemon());
         t.setDaemon(true);
         t.start();
         System.out.println("t.isDaemon() = " + t.isDaemon() + ", ");
         // 不休眠
-        // TimeUnit.SECONDS.sleep(1);
+        TimeUnit.SECONDS.sleep(2);
     }
 }
 
