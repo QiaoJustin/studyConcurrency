@@ -12,6 +12,7 @@ public class EvenGenerator extends IntGenerator {
     public int next() {
         // Danger point here!
         ++currentEvenValue;
+        Thread.yield();
         ++currentEvenValue;
         return currentEvenValue;
     }
