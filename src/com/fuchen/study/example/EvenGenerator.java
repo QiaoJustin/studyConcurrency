@@ -6,10 +6,10 @@ package com.fuchen.study.example;
  * @Date 5/2/2019 10:06 AM
  * Version 1.0
  */
-public class EvenGenerator extends IntGenerator {
+public class SynchronizedEvenGenerator extends IntGenerator {
     private int currentEvenValue = 0;
     @Override
-    public int next() {
+    public synchronized int next() {
         // Danger point here!
         ++currentEvenValue;
         Thread.yield();
@@ -18,6 +18,6 @@ public class EvenGenerator extends IntGenerator {
     }
 
     public static void main(String[] args) {
-        EvenChecker.test(new EvenGenerator());
+        EvenChecker.test(new SynchronizedEvenGenerator());
     }
 }
