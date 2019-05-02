@@ -4,7 +4,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * @Description 共享受限资源
+ * @Description 使用显示的Lock对象
  * @Author fuchen
  * @Date 5/2/2019 10:06 AM
  * Version 1.0
